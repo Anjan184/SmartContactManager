@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+</head>
+<body>
+<section>
+    <section class="h-90 gradient-form" style="background-color: #404040;">
+        <div class="container py-5 h-90">
+            <div class="row d-flex justify-content-center align-items-center h-90">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                                             style="width: 185px;" alt="logo">
+                                        <h4 class="mt-1 ">Smart Contact Manager</h4>
+                                    </div>
+
+                                    <h2 class="text-center"><b>Email</b></h2>
+                                    <br>
+                                    <form th:action="@{/send-otp}" method="post">
+                                        <div class="form-group">
+                                            <input name="email" required="required" type="email" placeholder="Enter email Here" class="form-control">
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button class="btn btn-warning">Send OTP</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">Smart Contact Manager</h4>
+                                    <p class="small mb-0">Helps you to simply store your contact numbers and details so that you don't need to remember.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+</body>
+</html>

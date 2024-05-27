@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Page</title>
+</head>
+<body>
+<section>
+    <h1 class="my-3 text-center"><b>Donate Us</b></h1>
+    <input id="payment_field" type="text" class="form-control my-2" placeholder="Enter amount here">
+    <div class="container text-center">
+    <button class="btn btn-success" onclick="paymentStart()">
+        PAY
+    </button>
+    </div>
+</section>
+</body>
+</html>

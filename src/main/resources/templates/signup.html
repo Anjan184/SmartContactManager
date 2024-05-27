@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup Page</title>
+</head>
+<body>
+<section>
+    <div class="container">
+    <div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="mycard mt-2">
+
+    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+       <p class="text-center" th:text="${session.message.content}"></p>
+    </div>
+
+    <h1 class="text-center">Register here!!</h1>
+    <form  th:action="@{/do_register}" method="post" th:object="${user}">
+
+        <div class="form-group">
+            <label >Your Name</label>
+            <input name="name" type="text" class="form-control" th:value="${user.name}"
+                   th:classappend="${#fields.hasErrors('name')?'is-invalid':''}"
+                     placeholder="Enter Name" required/>
+
+            <div th:each="e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback" >
+                Please provide a valid city.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email_field">Your Email</label>
+            <input name="email" type="email" class="form-control" id="email_field" aria-describedby="emailHelp" placeholder="Enter Email" required th:value="${user.email}">
+        </div>
+
+        <div class="form-group">
+            <label for="password_field">Your Password</label>
+            <input name="password" type="password" class="form-control" id="password_field" aria-describedby="emailHelp" placeholder="Enter Password" required th:value="${user.password}">
+        </div>
+
+        <div class="form-group">
+            <textarea th:value="${user.about}" name="about" placeholder="Enter Something" rows="6" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" name="agreement" class="form-check-input" id="agreement"/>
+            <label for="agreement">Accept Terms And Conditions</label>
+        </div>
+
+        <div class="container text-center">
+            <button type="submit" class="btn bg-primary text-white">
+            Submit
+            </button>
+
+
+            <button type="reset" class="btn btn-warning">
+            Reset
+            </button>
+        </div>
+
+
+
+    </form>
+</div>
+
+</div>
+
+    </div>
+
+    </div>
+</section>
+</body>
+</html>

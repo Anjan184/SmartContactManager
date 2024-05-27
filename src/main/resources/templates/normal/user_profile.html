@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Page</title>
+</head>
+<body>
+<section>
+    <h1 class="my-3 text-center"><b>Your Profile</b></h1>
+    <form
+          method="post"
+          th:action="@{/user/edit_user}"
+          class="mt-2">
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text mr-3">
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+            <input required type="text" name="name" th:value="${user.name}" class="form-control"/>
+        </div>
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text mr-3">
+                    @
+                </div>
+            </div>
+            <input required type="email" id="email" name="email" th:value="${user.email}" class="form-control"/>
+        </div>
+<br>
+        <div class="container text-center">
+            <button class="btn btn-outline-primary" type="submit">Update Profile</button>
+        </div>
+
+    </form>
+</section>
+</body>
+</html>
